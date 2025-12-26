@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация в спортзале</title>
+</head>
+<body>
+    <h2>Регистрация нового клиента</h2>
+    <p>После регистрации обратитесь к администратору для активации профиля клиента.</p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div>
+            <label>Имя пользователя:</label><br>
+            {{ form.username }}
+        </div>
+
+        <div>
+            <label>Пароль:</label><br>
+            {{ form.password1 }}
+        </div>
+
+        <div>
+            <label>Подтверждение пароля:</label><br>
+            {{ form.password2 }}
+        </div>
+
+        {% if form.errors %}
+            <p style="color: red;">Исправьте ошибки в форме</p>
+            <ul style="color: red;">
+                {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+
+    <p>Уже есть аккаунт? <a href="{% url 'login' %}">Войти</a></p>
+    <p><a href="/">На главную</a></p>
+</body>
+</html>

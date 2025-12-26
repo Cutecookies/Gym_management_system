@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход в спортзал</title>
+</head>
+<body>
+    <h2>Вход в систему</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div>
+            <label>Имя пользователя:</label><br>
+            {{ form.username }}
+        </div>
+
+        <div>
+            <label>Пароль:</label><br>
+            {{ form.password }}
+        </div>
+
+        {% if form.errors %}
+            <p style="color: red;">Неверное имя пользователя или пароль</p>
+        {% endif %}
+
+        <button type="submit">Войти</button>
+    </form>
+
+    <p>Нет аккаунта? <a href="{% url 'signup' %}">Зарегистрироваться</a></p>
+    <p><a href="/">На главную</a></p>
+</body>
+</html>
