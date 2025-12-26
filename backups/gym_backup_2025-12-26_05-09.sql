@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict ESs5dHUCxvC1kyZw4VVl2kpx1WDkkxcehAhSpPHd9ljzWUS8TVNro7zlDhlc27N
+\restrict ZMy2qJGlJFz3JLVCylNKt1a2rkiEWiuN17F8lKHemjYMsg332zBwNhBBzf7piak
 
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.1
@@ -642,8 +642,18 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 --
 
 COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
-1	pbkdf2_sha256$1000000$6KilNN1zKphH73V7eF6epJ$6rgMUHpdxIzYPi2GF9eo9s9ADwz+74VDYYO3QRswjdI=	2025-12-25 20:46:32.61587+03	t	cute_cookie				t	t	2025-12-25 00:40:02.970847+03
+1	pbkdf2_sha256$1000000$6KilNN1zKphH73V7eF6epJ$6rgMUHpdxIzYPi2GF9eo9s9ADwz+74VDYYO3QRswjdI=	2025-12-26 04:55:25.32766+03	t	cute_cookie				t	t	2025-12-25 00:40:02.970847+03
 2	pbkdf2_sha256$1000000$A5rzVMFNgRJj5OMZ5hAQQT$84kk1sQP64L+Gey8XI8KhonjKcffEe2PJEEuVwosq9o=	2025-12-25 20:47:58+03	f	ILoveCats	Александра	Попова	catkittymeow@mail.com	f	t	2025-12-25 20:47:20+03
+4	pbkdf2_sha256$1000000$j71QyAuHIrLNo76jUB22MI$dIFwUDRsrHhs25ltX0Ae3qGY/VJwy70K1Bi0rLow9SY=	\N	f	nstoppable.evangelist.131	Иван	Старостин	vayof_azidi39@bk.ru	f	t	2025-12-26 02:41:27+03
+5	pbkdf2_sha256$1000000$mnmzA6i1eBGL2GSTBQzpQO$DNBWPWWVJexG/eofZyBTIwkUMGN3a5EaqvsM1qm851o=	\N	f	majestic.pro.772	Борис	Попов	pogo_viture44@mail.ru	f	t	2025-12-26 02:42:13+03
+6	pbkdf2_sha256$1000000$f7DVzwPJjrpr9JfuCNXCNN$uYjfQEWnXeXPinHP6A7OWQY9+b61QzzDR22MfCiIaWM=	\N	f	skilled_reformer_154	Анна	Тихонова	defugok-opo60@mail.ru	f	t	2025-12-26 02:43:08+03
+7	pbkdf2_sha256$1000000$OunWJTH4GSdAEEaNth4KG9$gbLmHiYRVJ9Bsi58B4dfY5dWu9IpvN3TifgMsB0L2s4=	\N	f	determined_idol_306	Даниил	Корнеев	rofix-anika98@mail.ru	f	t	2025-12-26 02:43:55+03
+8	pbkdf2_sha256$1000000$kdasB8dyN5K9MMNNdirJ4o$ifzqHWmhWgOlNWfaJUa3+C8yByTTOIY6VU3hHATD4cw=	\N	f	kind.owl.493	Роман	Марков	ruhohu_jase6@gmail.com	f	t	2025-12-26 02:44:34+03
+9	pbkdf2_sha256$1000000$HvfeaxCzxSisZwgzTy4JJ3$Tukl6XF01L3RkGYDLzhGsikTBqS2VIuDWaII3Lw2WLo=	\N	f	gamer.guru.410	Мирослава	Ефремова	soz_uxahivi1@gmail.com	f	t	2025-12-26 02:45:10+03
+10	pbkdf2_sha256$1000000$qIowTqdLYQYikFyRRyRNPx$bjXKld3+IjG508HnVXBCSTv8C+CV4MgzMCwlgdn0GeY=	\N	f	gymnast_official_674	Анастасия	Соколова	xenixa_wiwi74@gmail.com	f	t	2025-12-26 02:45:43+03
+3	pbkdf2_sha256$1000000$be2eKQNeg4SLQwi75f34F8$zL01Eqgxw+lmJEL3O7vzLc1ViCrGe5C7c6hINwuVXrw=	\N	f	champion.dragon.482	Ксения	Гаврилова	jomud_agava42@gmail.com	f	t	2025-12-26 02:40:21+03
+12	pbkdf2_sha256$1000000$vGE49EIXtccLXJJl4PAKBr$cBYkYhkh6MiWIJWd9JJbJqqdvxOoj0P2ZYjBWVa03tg=	2025-12-26 04:54:56.540726+03	f	Ruhsdjks				f	t	2025-12-26 04:54:56.122218+03
+11	pbkdf2_sha256$1000000$ppJRBHBJqGZiPdF1ql9Xzs$Dz+9eKkZrND3+LBl1gy1ER206++Rq63i/zrJW5DiptA=	2025-12-26 04:55:10.929887+03	f	Qwa	Михаил	Дроздов	maciyu-cowa19@gmail.com	f	t	2025-12-26 03:30:54+03
 \.
 
 
@@ -672,6 +682,61 @@ COPY public.django_admin_log (id, action_time, object_id, object_repr, action_fl
 2	2025-12-25 20:48:32.613341+03	2	ILoveCats	2	[{"changed": {"fields": ["First name", "Last name", "Email address", "Last login"]}}]	4	1
 3	2025-12-25 20:48:42.532291+03	2	ILoveCats	2	[]	4	1
 4	2025-12-25 20:49:24.456308+03	1	Александра Попова	1	[{"added": {}}]	9	1
+5	2025-12-26 02:36:48.636425+03	1	Силовая тренировка	1	[{"added": {}}]	8	1
+6	2025-12-26 02:36:50.807638+03	1	Силовая тренировка	2	[]	8	1
+7	2025-12-26 02:37:36.935917+03	2	Фитнес	1	[{"added": {}}]	8	1
+8	2025-12-26 02:38:21.021935+03	3	Кардио тренировка	1	[{"added": {}}]	8	1
+9	2025-12-26 02:40:21.698912+03	3	champion.dragon.482	1	[{"added": {}}]	4	1
+10	2025-12-26 02:41:02.035727+03	3	champion.dragon.482	2	[{"changed": {"fields": ["First name", "Last name", "Email address"]}}]	4	1
+11	2025-12-26 02:41:27.963783+03	4	nstoppable.evangelist.131	1	[{"added": {}}]	4	1
+12	2025-12-26 02:42:03.465423+03	4	nstoppable.evangelist.131	2	[{"changed": {"fields": ["First name", "Last name", "Email address"]}}]	4	1
+13	2025-12-26 02:42:14.142037+03	5	majestic.pro.772	1	[{"added": {}}]	4	1
+14	2025-12-26 02:42:57.386054+03	5	majestic.pro.772	2	[{"changed": {"fields": ["First name", "Last name", "Email address"]}}]	4	1
+15	2025-12-26 02:43:09.046908+03	6	skilled_reformer_154	1	[{"added": {}}]	4	1
+16	2025-12-26 02:43:35.689276+03	6	skilled_reformer_154	2	[{"changed": {"fields": ["First name", "Last name", "Email address"]}}]	4	1
+17	2025-12-26 02:43:55.743169+03	7	determined_idol_306	1	[{"added": {}}]	4	1
+18	2025-12-26 02:44:17.572082+03	7	determined_idol_306	2	[{"changed": {"fields": ["First name", "Last name", "Email address"]}}]	4	1
+19	2025-12-26 02:44:35.237775+03	8	kind.owl.493	1	[{"added": {}}]	4	1
+20	2025-12-26 02:44:59.155989+03	8	kind.owl.493	2	[{"changed": {"fields": ["First name", "Last name", "Email address"]}}]	4	1
+21	2025-12-26 02:45:11.139112+03	9	gamer.guru.410	1	[{"added": {}}]	4	1
+22	2025-12-26 02:45:30.10547+03	9	gamer.guru.410	2	[{"changed": {"fields": ["First name", "Last name", "Email address"]}}]	4	1
+23	2025-12-26 02:45:44.361227+03	10	gymnast_official_674	1	[{"added": {}}]	4	1
+24	2025-12-26 02:46:05.652122+03	10	gymnast_official_674	2	[{"changed": {"fields": ["First name", "Last name", "Email address"]}}]	4	1
+25	2025-12-26 02:48:57.36642+03	1	Гаврилова Ксения Марковна Гаврилова Ксения Марковна	1	[{"added": {}}]	12	1
+26	2025-12-26 02:49:43.672413+03	1	Утренний фитнес (2025-12-25 15:30:00+00:00)	1	[{"added": {}}]	14	1
+27	2025-12-26 02:49:45.663279+03	1	Утренний фитнес (2025-12-25 15:30:00+00:00)	2	[]	14	1
+28	2025-12-26 02:50:37.728714+03	2	Анастасия Соколова	1	[{"added": {}}]	12	1
+29	2025-12-26 02:50:39.101209+03	2	Анастасия Соколова	2	[]	12	1
+30	2025-12-26 02:51:33.202261+03	2	Здоровое тело - здоровый дух (2025-12-25 18:45:00+00:00)	1	[{"added": {}}]	14	1
+31	2025-12-26 02:52:27.040284+03	3	champion.dragon.482	2	[{"changed": {"fields": ["First name", "Last name", "Email address"]}}]	4	1
+32	2025-12-26 02:53:21.859294+03	2	Даниил Корнеев	1	[{"added": {}}]	9	1
+33	2025-12-26 02:53:23.140813+03	2	Даниил Корнеев	2	[]	9	1
+34	2025-12-26 02:53:56.796778+03	3	Роман Марков	1	[{"added": {}}]	9	1
+35	2025-12-26 02:54:51.046505+03	3	Иван Старостин	1	[{"added": {}}]	12	1
+36	2025-12-26 02:55:57.546465+03	4	Борис Попов	1	[{"added": {}}]	9	1
+37	2025-12-26 02:56:17.897381+03	5	Анна Тихонова	1	[{"added": {}}]	9	1
+38	2025-12-26 02:57:46.605417+03	1	Ежемесечная	1	[{"added": {}}]	7	1
+39	2025-12-26 02:57:48.077429+03	1	Ежемесечная	2	[]	7	1
+40	2025-12-26 02:58:07.938496+03	1	Ежемесячная стандартная	2	[{"changed": {"fields": ["Name"]}}]	7	1
+41	2025-12-26 02:59:00.835773+03	2	Ежемесячная усиленная	1	[{"added": {}}]	7	1
+42	2025-12-26 02:59:13.517539+03	2	Ежемесячный усиленный	2	[{"changed": {"fields": ["Name"]}}]	7	1
+43	2025-12-26 02:59:18.204365+03	1	Ежемесячный стандартный	2	[{"changed": {"fields": ["Name"]}}]	7	1
+44	2025-12-26 03:00:20.894193+03	1	Анна Тихонова - 2025-12-23 11:54:07+00:00	1	[{"added": {}}]	13	1
+45	2025-12-26 03:01:17.811078+03	1	Анна Тихонова - 500	1	[{"added": {}}]	11	1
+46	2025-12-26 03:01:19.173957+03	1	Анна Тихонова - 500.00	2	[]	11	1
+47	2025-12-26 03:02:07.805527+03	2	Даниил Корнеев - 10000	1	[{"added": {}}]	11	1
+48	2025-12-26 03:03:13.722783+03	1	Даниил Корнеев - Ежемесячный стандартный	1	[{"added": {}}]	10	1
+49	2025-12-26 03:04:19.306392+03	1	Даниил Корнеев - Утренний фитнес (2025-12-25 15:30:00+00:00)	1	[{"added": {}}]	15	1
+50	2025-12-26 03:04:37.969839+03	2	Борис Попов - Утренний фитнес (2025-12-25 15:30:00+00:00)	1	[{"added": {}}]	15	1
+51	2025-12-26 03:04:55.06579+03	3	Анна Тихонова - Утренний фитнес (2025-12-25 15:30:00+00:00)	1	[{"added": {}}]	15	1
+52	2025-12-26 03:06:06.304247+03	3	Кардио (2025-12-27 15:30:00+00:00)	1	[{"added": {}}]	14	1
+53	2025-12-26 03:06:45.918817+03	4	Силовая тренировка (2025-12-28 15:30:00+00:00)	1	[{"added": {}}]	14	1
+54	2025-12-26 03:07:09.126549+03	4	Крепкое здоровье (2025-12-28 15:30:00+00:00)	2	[{"changed": {"fields": ["Name", "Trainer"]}}]	14	1
+55	2025-12-26 03:07:23.631654+03	4	Крепкое здоровье (2025-12-28 18:45:00+00:00)	2	[{"changed": {"fields": ["Start time"]}}]	14	1
+56	2025-12-26 03:36:37.213078+03	6	 	1	[{"added": {}}]	9	1
+57	2025-12-26 03:38:25.49804+03	11	Qwa	2	[{"changed": {"fields": ["First name", "Last name", "Email address"]}}]	4	1
+58	2025-12-26 03:38:47.73958+03	4	Михаил Дроздов - Утренний фитнес (2025-12-25 15:30:00+00:00)	1	[{"added": {}}]	15	1
+59	2025-12-26 05:01:01.603592+03	7	 	1	[{"added": {}}]	9	1
 \.
 
 
@@ -731,7 +796,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 
 COPY public.django_session (session_key, session_data, expire_date) FROM stdin;
 elckxzb2liu6i2jmvsln1495mdiwfsj6	.eJxVjEEOwiAQRe_C2hCgDBSX7j0DmWFAqoYmpV0Z765NutDtf-_9l4i4rTVuPS9xYnEWWpx-N8L0yG0HfMd2m2Wa27pMJHdFHrTL68z5eTncv4OKvX5rlb2GhKA0BY1OkSbjLTk2AD4EAxx84WKzs2DQ0MhKIRRMIw8Y9CDeH85MN5I:1vYWbM:V9H28iqINwOynP-trhYm-E1YbP8Bp5gUHG_RyXDAl0M	2026-01-08 00:41:00.590656+03
-ibhtdkctvw6o8sghoyh5gxi2q3y1j659	.eJxVjEEOwiAQRe_C2hCgDBSX7j0DmWFAqoYmpV0Z765NutDtf-_9l4i4rTVuPS9xYnEWWpx-N8L0yG0HfMd2m2Wa27pMJHdFHrTL68z5eTncv4OKvX5rlb2GhKA0BY1OkSbjLTk2AD4EAxx84WKzs2DQ0MhKIRRMIw8Y9CDeH85MN5I:1vYpQ0:RgxCqvKjCtcfBguSUju7qnJBXX9qlgjHHHo509hsIug	2026-01-08 20:46:32.618045+03
+oxqtlizeuntttjjn5eld32tx9dp62c85	.eJxVjEEOwiAQRe_C2hCgDBSX7j0DmWFAqoYmpV0Z765NutDtf-_9l4i4rTVuPS9xYnEWWpx-N8L0yG0HfMd2m2Wa27pMJHdFHrTL68z5eTncv4OKvX5rlb2GhKA0BY1OkSbjLTk2AD4EAxx84WKzs2DQ0MhKIRRMIw8Y9CDeH85MN5I:1vYx37:B8zUy36tZWwi1VGTstxaJ1dR75J09XKkxt1IklT1yII	2026-01-09 04:55:25.32866+03
 \.
 
 
@@ -740,6 +805,10 @@ ibhtdkctvw6o8sghoyh5gxi2q3y1j659	.eJxVjEEOwiAQRe_C2hCgDBSX7j0DmWFAqoYmpV0Z765Nut
 --
 
 COPY public.gym_classregistration (id, registration_date, client_id, workout_class_id) FROM stdin;
+1	2025-12-26 15:03:32+03	2	1
+2	2025-12-26 13:04:25+03	4	1
+3	2025-12-24 18:12:40+03	5	1
+4	2025-12-26 03:38:31+03	6	1
 \.
 
 
@@ -749,6 +818,12 @@ COPY public.gym_classregistration (id, registration_date, client_id, workout_cla
 
 COPY public.gym_client (id, phone, birth_date, user_id) FROM stdin;
 1	+7 904 347 15 13	1992-04-22	2
+2	+7 9762234685	1982-06-17	7
+3	+7 9802510791	2001-03-03	8
+4	+7 9929384735	1987-12-06	5
+5	+7 9969842182	1995-07-13	6
+6	+7 9523549768	2002-12-26	11
+7	+7 9932847703	2000-12-26	12
 \.
 
 
@@ -757,6 +832,7 @@ COPY public.gym_client (id, phone, birth_date, user_id) FROM stdin;
 --
 
 COPY public.gym_clientmembership (id, start_date, end_date, remaining_visits, client_id, membership_type_id) FROM stdin;
+1	2025-12-26	2026-01-26	8	2	1
 \.
 
 
@@ -765,6 +841,8 @@ COPY public.gym_clientmembership (id, start_date, end_date, remaining_visits, cl
 --
 
 COPY public.gym_membershiptype (id, name, description, price, duration_days, visits_count) FROM stdin;
+2	Ежемесячный усиленный	Занятия по четыре раза в неделю.	18000.00	30	16
+1	Ежемесячный стандартный	Посещение любых тренировок два раза в неделю.	10000.00	30	8
 \.
 
 
@@ -773,6 +851,8 @@ COPY public.gym_membershiptype (id, name, description, price, duration_days, vis
 --
 
 COPY public.gym_payment (id, amount, payment_date, description, client_id) FROM stdin;
+1	500.00	2025-12-24 14:58:39+03	Оплата одноразового посещения	5
+2	10000.00	2025-12-26 20:01:22+03	Покупка ежемесячного стандартного абонемента	2
 \.
 
 
@@ -781,6 +861,9 @@ COPY public.gym_payment (id, amount, payment_date, description, client_id) FROM 
 --
 
 COPY public.gym_trainer (id, phone, specialization, experience, user_id) FROM stdin;
+1	+7 9472961099	Пилатес, Йога	3	3
+2	+7 9932847703	Силовые нагрузки, тяжелая атлетика	7	10
+3	+7 9118982154	Кардио	6	4
 \.
 
 
@@ -789,6 +872,7 @@ COPY public.gym_trainer (id, phone, specialization, experience, user_id) FROM st
 --
 
 COPY public.gym_visit (id, check_in, check_out, client_id) FROM stdin;
+1	2025-12-23 14:54:07+03	2025-12-23 15:34:28+03	5
 \.
 
 
@@ -797,6 +881,10 @@ COPY public.gym_visit (id, check_in, check_out, client_id) FROM stdin;
 --
 
 COPY public.gym_workoutclass (id, name, start_time, duration, trainer_id, workout_type_id) FROM stdin;
+1	Утренний фитнес	2025-12-25 18:30:00+03	60	1	2
+2	Здоровое тело - здоровый дух	2025-12-25 21:45:00+03	80	2	1
+3	Кардио	2025-12-27 18:30:00+03	60	3	3
+4	Крепкое здоровье	2025-12-28 21:45:00+03	80	2	1
 \.
 
 
@@ -805,6 +893,9 @@ COPY public.gym_workoutclass (id, name, start_time, duration, trainer_id, workou
 --
 
 COPY public.gym_workouttype (id, name, description) FROM stdin;
+1	Силовая тренировка	Цель силовых тренировок — развивать силу, увеличивать объёмы мышц и повышать общую выносливость организма. Регулярные тренировки улучшают тонус мышц и укрепляют суставы и кости.
+2	Фитнес	Основная цель фитнеса — поддержание и улучшение здоровья человека. Она достигается через разнообразные виды тренировок, такие как аэробика, силовые упражнения, растяжка и кардио. Также через правильное питание и отказ от вредных привычек.
+3	Кардио тренировка	Главная цель таких тренировок — укрепить сердечно-сосудистую систему. Кардионагрузки также активизируют метаболизм, помогая организму эффективнее сжигать жир.
 \.
 
 
@@ -840,7 +931,7 @@ SELECT pg_catalog.setval('public.auth_user_groups_id_seq', 1, false);
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.auth_user_id_seq', 2, true);
+SELECT pg_catalog.setval('public.auth_user_id_seq', 12, true);
 
 
 --
@@ -854,7 +945,7 @@ SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 1, false);
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.django_admin_log_id_seq', 4, true);
+SELECT pg_catalog.setval('public.django_admin_log_id_seq', 59, true);
 
 
 --
@@ -875,63 +966,63 @@ SELECT pg_catalog.setval('public.django_migrations_id_seq', 19, true);
 -- Name: gym_classregistration_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gym_classregistration_id_seq', 1, false);
+SELECT pg_catalog.setval('public.gym_classregistration_id_seq', 4, true);
 
 
 --
 -- Name: gym_client_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gym_client_id_seq', 1, true);
+SELECT pg_catalog.setval('public.gym_client_id_seq', 7, true);
 
 
 --
 -- Name: gym_clientmembership_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gym_clientmembership_id_seq', 1, false);
+SELECT pg_catalog.setval('public.gym_clientmembership_id_seq', 1, true);
 
 
 --
 -- Name: gym_membershiptype_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gym_membershiptype_id_seq', 1, false);
+SELECT pg_catalog.setval('public.gym_membershiptype_id_seq', 2, true);
 
 
 --
 -- Name: gym_payment_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gym_payment_id_seq', 1, false);
+SELECT pg_catalog.setval('public.gym_payment_id_seq', 2, true);
 
 
 --
 -- Name: gym_trainer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gym_trainer_id_seq', 1, false);
+SELECT pg_catalog.setval('public.gym_trainer_id_seq', 3, true);
 
 
 --
 -- Name: gym_visit_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gym_visit_id_seq', 1, false);
+SELECT pg_catalog.setval('public.gym_visit_id_seq', 1, true);
 
 
 --
 -- Name: gym_workoutclass_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gym_workoutclass_id_seq', 1, false);
+SELECT pg_catalog.setval('public.gym_workoutclass_id_seq', 4, true);
 
 
 --
 -- Name: gym_workouttype_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.gym_workouttype_id_seq', 1, false);
+SELECT pg_catalog.setval('public.gym_workouttype_id_seq', 3, true);
 
 
 --
@@ -1461,5 +1552,5 @@ ALTER TABLE ONLY public.gym_workoutclass
 -- PostgreSQL database dump complete
 --
 
-\unrestrict ESs5dHUCxvC1kyZw4VVl2kpx1WDkkxcehAhSpPHd9ljzWUS8TVNro7zlDhlc27N
+\unrestrict ZMy2qJGlJFz3JLVCylNKt1a2rkiEWiuN17F8lKHemjYMsg332zBwNhBBzf7piak
 

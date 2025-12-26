@@ -3,6 +3,12 @@ from django.http import HttpResponse
 from .models import *
 import csv
 import json
+import subprocess
+import os
+from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
 
 @admin.action(description="Экспортировать всех клиентов в CSV")
 def export_all_clients_csv(modeladmin, request, queryset):
@@ -54,13 +60,12 @@ def export_all_trainers_csv(modeladmin, request, queryset):
 
     writer = csv.writer(response, delimiter=';')
     # writer = специальный объект для создания CSV
-    writer.writerow(['ID', 'ФИО', 'Телефон', 'Дата рождения', 'Email', 'Специализация'])
+    writer.writerow(['ID', 'ФИО', 'Телефон', 'Email', 'Специализация'])
     for trainer in trainers:
         writer.writerow([
             trainer.id,
             f"{trainer.user.first_name} {trainer.user.last_name}",
             trainer.phone,
-            trainer.birth_date,
             trainer.user.email,
             trainer.specialization
         ])
@@ -76,7 +81,6 @@ def export_all_trainers_json(modeladmin, request, queryset):
             'id': trainer.id,
             'full_name': f"{trainer.user.first_name} {trainer.user.last_name}",
             'phone': trainer.phone,
-            'birth_date': str(trainer.birth_date),
             'email': trainer.user.email,
             'specialization': trainer.specialization
         })
@@ -127,26 +131,53 @@ def export_all_classes_json(modeladmin, request, queryset):
     response['Content-Disposition'] = 'attachment; filename="trainers.json"'
     return response
 
+
+def quick_backup():
+    # Создает быстрый бэкап
+    try:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        backup_file = f"backups/backup_{timestamp}.sql"
+
+        os.makedirs('backups', exist_ok=True)
+
+        cmd = f"pg_dump -U postgres gym_db > {backup_file}"
+        env = os.environ.copy()
+        env['PGPASSWORD'] = os.getenv('DB_PASSWORD', '')
+
+        subprocess.run(cmd, shell=True, env=env, check=True)
+        return f"Бэкап создан: {backup_file}"
+    except Exception as e:
+        return f"Ошибка: {e}"
+
+@admin.action(description="Создать бэкап БД")
+def backup_action(modeladmin, request, queryset):
+    msg = quick_backup()
+    print(msg)
+
 # Настройка админки для каждой модели
 class ClientAdmin(admin.ModelAdmin):
     list_display = ['user', 'phone', 'birth_date']
-    actions = [export_all_clients_csv, export_all_clients_json]  # ← наши действия!
+    actions = [export_all_clients_csv, export_all_clients_json, backup_action]
 
 class TrainerAdmin(admin.ModelAdmin):
     list_display = ['user', 'specialization', 'experience']
-    actions = [export_all_trainers_csv]
+    actions = [export_all_trainers_csv, export_all_trainers_json, backup_action]
 
 class WorkoutClassAdmin(admin.ModelAdmin):
     list_display = ['name', 'workout_type', 'trainer', 'start_time']
-    actions = [export_all_classes_csv]
+    actions = [export_all_classes_csv, export_all_classes_json, backup_action]
+
+# Добавляем действие ко всем моделям
+class BackupAdmin(admin.ModelAdmin):
+    actions = [backup_action]
 
 # Register models
 admin.site.register(Client, ClientAdmin)
 admin.site.register(Trainer, TrainerAdmin)
-admin.site.register(MembershipType)
-admin.site.register(ClientMembership)
-admin.site.register(WorkoutType)
+admin.site.register(MembershipType, BackupAdmin)
+admin.site.register(ClientMembership, BackupAdmin)
+admin.site.register(WorkoutType, BackupAdmin)
 admin.site.register(WorkoutClass, WorkoutClassAdmin)
-admin.site.register(ClassRegistration)
-admin.site.register(Visit)
-admin.site.register(Payment)
+admin.site.register(ClassRegistration, BackupAdmin)
+admin.site.register(Visit, BackupAdmin)
+admin.site.register(Payment, BackupAdmin)

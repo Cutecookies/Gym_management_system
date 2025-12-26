@@ -65,9 +65,3 @@ def start_backup_service():
 		schedule.run_pending()
 		time.sleep(60)
 
-
-if __name__ == "__main__":
-	try:
-		start_backup_service()
-	except KeyboardInterrupt:
-		print("\nОстановлено")
